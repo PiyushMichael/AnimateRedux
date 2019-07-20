@@ -10,7 +10,6 @@ class App extends Component{
       <View style={styles.container}>
         <AnimOne />
         <AnimTwo />
-        <Text>Haaaaaloooo :)</Text>
       </View>
     </ScrollView>);
   }

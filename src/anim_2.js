@@ -8,7 +8,8 @@ class AnimTwo extends Component {
         this.state = {
             square1: new Animated.Value(1),
             square2: new Animated.ValueXY(0,0),
-            square3: new Animated.Value(1)
+            square3: new Animated.Value(1),
+            text1: new Animated.Value(1)
         };
     }
 
@@ -34,6 +35,14 @@ class AnimTwo extends Component {
             toValue: 0,
             delay: 200,
             duration: 1000
+        }).start();
+    };
+
+    textAnimate1 = () => {
+        Animated.timing(this.state.text1,{
+            toValue: 0,
+            delay: 100,
+            duration: 2000
         }).start();
     };
 
@@ -70,6 +79,15 @@ class AnimTwo extends Component {
                 <View style={{width: 100,height: 100,backgroundColor: 'green'}}></View>
             </Animated.View>
             <Button title="interpolate left with opacity value" onPress={this.animate3} />
+            <Animated.Text style={{
+                fontSize: this.state.text1.interpolate({
+                    inputRange: [0,0.5,1],
+                    outputRange: [20,5,30]
+                })
+            }}>
+                <Text>HAAAAAAAALOOOOOOO :)</Text>
+            </Animated.Text>
+            <Button title="animate font" onPress={this.textAnimate1} />
         </View>);
     }
 }
