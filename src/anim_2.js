@@ -32,7 +32,14 @@ class AnimTwo extends Component {
         return (
         <View>
             <Text>second animation component :)</Text>
-            <Animated.View style={{opacity: this.state.square1}}>
+            <Animated.View style={{
+                opacity: this.state.square1,
+                left: this.state.square1.interpolate({
+                    inputRange: [0,1],
+                    outputRange: [300,0]
+                    
+                })
+            }}>
                 <View style={styles.oSquare}></View>
             </Animated.View>
             <Button title="interpolate left with opacity value" onPress={this.animate1} />
