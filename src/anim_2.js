@@ -7,7 +7,8 @@ class AnimTwo extends Component {
         super();
         this.state = {
             square1: new Animated.Value(1),
-            square2: new Animated.ValueXY(0,0)
+            square2: new Animated.ValueXY(0,0),
+            square3: new Animated.Value(1)
         };
     }
 
@@ -25,6 +26,14 @@ class AnimTwo extends Component {
             delay: 200,
             duration: 1000,
             easing: Easing.elastic(10)
+        }).start();
+    };
+
+    animate3 = () => {
+        Animated.timing(this.state.square3,{
+            toValue: 0,
+            delay: 200,
+            duration: 1000
         }).start();
     };
 
@@ -46,11 +55,21 @@ class AnimTwo extends Component {
                 }}>
                 <View style={styles.oSquare}></View>
             </Animated.View>
-            <Button title="interpolate left with opacity value" onPress={this.animate1} />
+            <Button title="interpolate mutli value rotate with opacity value" onPress={this.animate1} />
             <Animated.View style={this.state.square2.getLayout()}>
                 <View style={styles.oSquare}></View>
             </Animated.View>
             <Button title="animate second" onPress={this.animate2} />
+            <Animated.View style={{
+                opacity: this.state.square3,
+                left: this.state.square3.interpolate({
+                    inputRange:[0,1],
+                    outputRange: [300,0]
+                })
+            }}>
+                <View style={{width: 100,height: 100,backgroundColor: 'green'}}></View>
+            </Animated.View>
+            <Button title="interpolate left with opacity value" onPress={this.animate3} />
         </View>);
     }
 }
