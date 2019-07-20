@@ -62,11 +62,11 @@ class AnimTwo extends Component {
                     })
                 }]
                 }}>
-                <View style={styles.oSquare}></View>
+                <View style={styles.square1}></View>
             </Animated.View>
             <Button title="interpolate mutli value rotate with opacity value" onPress={this.animate1} />
             <Animated.View style={this.state.square2.getLayout()}>
-                <View style={styles.oSquare}></View>
+                <View style={styles.square2}></View>
             </Animated.View>
             <Button title="animate second" onPress={this.animate2} />
             <Animated.View style={{
@@ -76,7 +76,7 @@ class AnimTwo extends Component {
                     outputRange: [300,0]
                 })
             }}>
-                <View style={{width: 100,height: 100,backgroundColor: 'green'}}></View>
+                <View style={styles.square3}></View>
             </Animated.View>
             <Button title="interpolate left with opacity value" onPress={this.animate3} />
             <Animated.Text style={{

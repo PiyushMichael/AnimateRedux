@@ -5,14 +5,19 @@ export const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff'
     },
-    square: {
+    square1: {
         width: 100,
         height: 100,
         backgroundColor: 'red'
     },
-    oSquare: {
+    square2: {
         width: 100,
         height: 100,
         backgroundColor: 'blue'
+    },
+    square3: {
+        width: 100,
+        height: 100,
+        backgroundColor: 'green'
     }
 });

@@ -33,11 +33,11 @@ class AnimOne extends Component{
         return (
         <View>
             <Animated.View style={this.state.redSquare.getLayout() /*left:this.redSquare.x,top:this.redSquare.y*/}>
-                <View style={styles.square}></View>
+                <View style={styles.square1}></View>
             </Animated.View>
             <Button title="animate" onPress={this.animate}/>
             <Animated.View style={{opacity: this.state.doSquare}}>
-                <View style={styles.square}></View>
+                <View style={styles.square1}></View>
             </Animated.View>
             <Button title="opacity" onPress={this.onlyAnimate} />
         </View>);
