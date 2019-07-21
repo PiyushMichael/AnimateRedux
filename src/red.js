@@ -9,7 +9,9 @@ class RedComponent extends Component {
     }
 
     render(){
-        return <View><Text>redux component here eheh :)</Text></View>
+        return (<View>
+            <Text>redux component here eheh :)</Text>
+        </View>);
     }
 }
 
